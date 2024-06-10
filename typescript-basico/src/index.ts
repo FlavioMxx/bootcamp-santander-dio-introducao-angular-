@@ -128,3 +128,12 @@
     }
 
     const magicChar = new Magician("Patolino", 100, 100, 100);
+
+//Generics
+    function concatArray<T>(...itens: T[]): T[] {
+        return new Array().concat(...itens);
+    }
+
+    const numArray = concatArray<number[]>([1, 5], [3]);
+    const stringArray = concatArray<string[]>(["Maria", "Cecila"], ["Jullya"]);
+      
