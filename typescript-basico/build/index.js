@@ -32,3 +32,12 @@ let boleto = ["conta de agua", 199.90, 83502958];
 //datas
 let aniversario = new Date("2024-06-12 10:00");
 console.log(aniversario.toLocaleString("BR"));
+//Funcoes
+function addNUmber(x, y) {
+    return x + y;
+}
+function addHelloTo(name) {
+    return `Hello ${name}`;
+}
+let soma = addNUmber(4, 7);
+console.log(addHelloTo("Maria"));

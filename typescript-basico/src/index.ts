@@ -51,3 +51,33 @@
     //datas
     let aniversario: Date = new Date("2024-06-12 10:00");
     console.log(aniversario.toLocaleString("BR"));
+
+//Funcoes
+
+    //simples
+    function addNUmber(x: number, y:number) : number {
+    
+        return x + y;
+    }
+
+    function addHelloTo(name: string) {
+        return `Hello ${name}`;
+    }
+
+    let soma: number = addNUmber(4, 7);
+
+    console.log(addHelloTo("Maria"));
+
+    //MultiTipos
+    function callToPhone(phone: number | string) : number | string { // ou any 
+        return phone;
+    }
+
+
+    //Async
+    async function getDatabase(id:number): Promise<number | string> {
+        return "Maria";
+    }
+
+
+
