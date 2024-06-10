@@ -96,3 +96,35 @@
         id: 1,
         name: "Atom",
     };
+
+//Classes
+    class Character {
+        private name : string; //visto somente pela propria class
+        protected stregth : number; //visto pela classe e subclasses
+        public skill? : number; //Opcional - geral ve
+
+        constructor(name : string, stregth : number, skill : number) {
+            this.name = name;
+            this.stregth = stregth;
+            this.skill = skill;
+        }
+
+        attack() : void {
+            console.log(`Attack with ${this.stregth} points`);
+        }
+    }    
+
+    const char = new Character("Naruto", 78, 100);
+
+    char.attack();    
+
+    //subclasse
+    class Magician extends Character {
+        magicPoints : number
+        constructor (name : string, stregth : number, skill : number, magicPoints : number) {
+            super(name, stregth, skill);
+            this.magicPoints = magicPoints;
+        }
+    }
+
+    const magicChar = new Magician("Patolino", 100, 100, 100);
