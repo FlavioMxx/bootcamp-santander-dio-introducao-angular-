@@ -80,4 +80,19 @@
     }
 
 
+//interfaces (type x interface)
+    //usado muito apenas para tipar um objeto
+    type robot = {
+        readonly id: number | string, //somente leitura
+        name: string,
+    };
+    //muito usado com classes
+    interface robot2 {
+        readonly id: number | string,
+        name: string,
+    }
 
+    const bot: robot = {
+        id: 1,
+        name: "Atom",
+    };
