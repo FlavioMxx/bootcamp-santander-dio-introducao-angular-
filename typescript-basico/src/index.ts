@@ -37,3 +37,10 @@
         preco : 89.99,
         unidades : 5,
     }
+
+    //arrays - unitype
+    let dados: string[] = ["Flavio", "Jullya", "Maria"];
+    let dados2 : Array<string> = ["Flavio", "Jullya", "Maria"];
+
+    //arrays- multitype
+    let infos: (string | number)[] = ["Flavio", 13, "Jullya", 3, "Maria", 12];
