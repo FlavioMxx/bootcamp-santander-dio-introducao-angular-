@@ -136,4 +136,65 @@
 
     const numArray = concatArray<number[]>([1, 5], [3]);
     const stringArray = concatArray<string[]>(["Maria", "Cecila"], ["Jullya"]);
-      
+
+//Decorators
+    function exibirNome(target: any) {
+        console.log(target);
+    }
+
+    @exibirNome
+    class Funcionario {
+
+    }
+
+    function apiVersion(version: string) {
+        return (target : any) => {
+            Object.assign(target.prototype, {__version : version})
+        };
+    };
+
+    @apiVersion("1.10")
+    class Api {};
+
+    const api = new Api();
+    //console.log(api.__version); //Realmente __version ira existir apenas quando for chamado o decorator
+    
+
+    //attribute decorator
+
+    function minLenght(length: number) {
+        return (target:any, key: string) => {
+            let __value = target[key];
+
+            const getter = () => __value;
+            const setter = (value: string) => {
+                if (value.length < length) {
+                    throw new Error(`Tamanho menor do que ${length}`);
+                } else {
+                    __value = value;
+                }
+            }
+
+
+            Object.defineProperty(target, key, {
+                get: getter,
+                set: setter,
+            })
+        }
+        
+    }
+       
+
+    class Api2 {
+        @minLenght(3)
+        name: string;
+
+        constructor(name: string) {
+            this.name = name;
+        };
+    };
+
+    const api2 = new Api2("Produtos");
+    console.log(api2.name);
+
+
