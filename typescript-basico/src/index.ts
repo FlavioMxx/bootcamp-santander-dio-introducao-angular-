@@ -44,3 +44,10 @@
 
     //arrays- multitype
     let infos: (string | number)[] = ["Flavio", 13, "Jullya", 3, "Maria", 12];
+
+    //tuplas
+    let boleto: [string, number, number] = ["conta de agua", 199.90, 83502958];
+
+    //datas
+    let aniversario: Date = new Date("2024-06-12 10:00");
+    console.log(aniversario.toLocaleString("BR"));
