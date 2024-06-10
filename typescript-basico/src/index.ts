@@ -15,3 +15,25 @@
     //Tipos Abrangentes: any or void.
     let retornoVazio : void; //Não recebe nada, apenas "nada"
     let qualquerCoisa : any = "LITERALMENTE QUALQUER COISA"; //Posso colocar um camelo aqui, que vai dar bom.
+
+
+    //objeto - sem previsibilidade
+    let produto : object = {
+        nome: "Maria",
+        cidade: "SP",
+        idade: 0,
+    };
+
+
+    //objeto - tipado - com previsibilidade
+    type ProdutoLoja = {
+        nome : string; 
+        preco: number;
+        unidades : number;
+    }
+
+    let meuProduto : ProdutoLoja = {
+        nome : "Tenis",
+        preco : 89.99,
+        unidades : 5,
+    }
